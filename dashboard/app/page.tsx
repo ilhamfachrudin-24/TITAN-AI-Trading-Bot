@@ -4,7 +4,10 @@ import PositionCard from "@/components/PositionCard";
 import WalletCard from "@/components/WalletCard";
 import LiveTradingPanel from "@/components/LiveTradingPanel";
 import MarketStream from "@/components/MarketStream";
-
+import PerformanceCard from "@/components/PerformanceCard";
+import WinRateChart from "@/components/WinRateChart";
+import ProfitChart from "@/components/ProfitChart";
+import AIAccuracy from "@/components/AIAccuracy";
 
 
 export default function Home(){
