@@ -2,6 +2,8 @@ import AIStatus from "@/components/AIStatus";
 import MarketCard from "@/components/MarketCard";
 import PositionCard from "@/components/PositionCard";
 import WalletCard from "@/components/WalletCard";
+import LiveTradingPanel from "@/components/LiveTradingPanel";
+
 
 
 export default function Home(){
@@ -9,17 +11,27 @@ export default function Home(){
 
 return (
 
-<main className="min-h-screen p-8">
+<main className="
+min-h-screen
+p-8
+">
 
 
-<h1 className="text-4xl font-bold">
+<h1 className="
+text-4xl
+font-bold
+">
 
 🔥 TITAN AI Trading Terminal
 
 </h1>
 
 
-<p className="mt-2 text-gray-400">
+
+<p className="
+text-gray-400
+mt-2
+">
 
 Autonomous AI Crypto Intelligence System
 
@@ -27,7 +39,13 @@ Autonomous AI Crypto Intelligence System
 
 
 
-<div className="grid md:grid-cols-2 gap-6 mt-8">
+
+<div className="
+grid
+md:grid-cols-2
+gap-6
+mt-8
+">
 
 
 <AIStatus />
@@ -43,6 +61,20 @@ Autonomous AI Crypto Intelligence System
 
 
 </div>
+
+
+
+
+<div className="
+mt-8
+">
+
+
+<LiveTradingPanel />
+
+
+</div>
+
 
 
 </main>
