@@ -22,25 +22,6 @@ from app.api import (
 
 )
 
-    ai_routes,
-
-    market_routes,
-
-    wallet_routes,
-
-    trade_routes,
-
-    backtest_routes,
-
-    security_routes,
-
-    intelligence_routes,
-
-    autotrade_routes
-
-)
-
-
 
 Base.metadata.create_all(
 
