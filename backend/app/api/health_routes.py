@@ -1,23 +1,32 @@
 from fastapi import APIRouter
 
 
-from app.monitoring.health import health
-
-
 
 router = APIRouter(
 
     prefix="/health",
 
-    tags=["Monitoring"]
+    tags=["Health"]
 
 )
 
 
 
-@router.get("")
 
-def health_check():
+@router.get("/")
+
+def health():
+
+    return {
 
 
-    return health.status()
+        "status":
+
+        "online",
+
+
+        "service":
+
+        "TITAN AI Trading Bot"
+
+    }
