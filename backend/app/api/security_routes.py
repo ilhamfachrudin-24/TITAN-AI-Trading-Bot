@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
-from app.security.emergency_stop import emergency_stop
+
+from app.security.secrets_manager import secrets
 
 
 
@@ -14,31 +15,13 @@ router = APIRouter(
 
 
 
-@router.post("/stop")
+@router.get("/check")
 
-def stop_bot():
-
-    return emergency_stop.activate()
+def security_check():
 
 
+    return secrets.validate([
 
-@router.post("/start")
+        "DATABASE_URL"
 
-def start_bot():
-
-    return emergency_stop.deactivate()
-
-
-
-@router.get("/status")
-
-def status():
-
-    return {
-
-
-        "trading_stopped":
-
-        emergency_stop.check()
-
-    }
+    ])
