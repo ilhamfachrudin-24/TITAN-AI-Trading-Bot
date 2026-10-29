@@ -24,7 +24,9 @@ from app.api import (
 
     consensus_routes,
 
-    health_routes
+    health_routes,
+
+    exchange_routes
 
 )
 
@@ -72,6 +74,8 @@ app.include_router(evaluation_routes.router)
 app.include_router(consensus_routes.router)
 
 app.include_router(health_routes.router)
+
+app.include_router(exchange_routes.route)
 
 
 @app.get("/")
