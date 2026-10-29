@@ -1,132 +1,149 @@
-import requests
-
-from app.config import settings
+import os
 
 
+from telegram import Update
 
-class TelegramMonitor:
+from telegram.ext import (
+
+    Application,
+
+    CommandHandler,
+
+    ContextTypes
+
+)
 
 
 
-    def __init__(self):
+from app.telegram.commands import commands
 
-        self.token = (
-            settings.TELEGRAM_BOT_TOKEN
+
+
+
+TOKEN = os.getenv(
+
+    "TELEGRAM_TOKEN"
+
+)
+
+
+
+
+async def start(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
+
+
+    await update.message.reply_text(
+
+        "🔥 TITAN AI Trading Bot Online"
+
+    )
+
+
+
+
+
+async def status(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
+
+
+    result = commands.status()
+
+
+
+    await update.message.reply_text(
+
+        str(result)
+
+    )
+
+
+
+
+
+async def start_bot(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
+
+
+    result = commands.start()
+
+
+
+    await update.message.reply_text(
+
+        str(result)
+
+    )
+
+
+
+
+
+async def stop_bot(
+    update: Update,
+    context: ContextTypes.DEFAULT_TYPE
+):
+
+
+    result = commands.stop()
+
+
+
+    await update.message.reply_text(
+
+        str(result)
+
+    )
+
+
+
+
+
+def run_bot():
+
+
+    app = Application.builder().token(
+
+        TOKEN
+
+    ).build()
+
+
+
+    app.add_handler(
+
+        CommandHandler(
+            "start",
+            start_bot
         )
 
-        self.chat_id = (
-            settings.TELEGRAM_CHAT_ID
+    )
+
+
+    app.add_handler(
+
+        CommandHandler(
+            "status",
+            status
         )
 
+    )
 
 
-    def send_message(
-        self,
-        message
-    ):
+    app.add_handler(
 
-
-        if not self.token:
-
-            return {
-
-                "status":
-                "telegram_not_configured"
-
-            }
-
-
-
-        url = (
-
-            f"https://api.telegram.org/"
-            f"bot{self.token}/sendMessage"
-
+        CommandHandler(
+            "stop",
+            stop_bot
         )
 
-
-        payload = {
-
-            "chat_id":
-            self.chat_id,
-
-            "text":
-            message
-
-        }
+    )
 
 
-        response = requests.post(
-
-            url,
-
-            json=payload
-
-        )
-
-
-        return response.json()
-
-
-
-    def trade_alert(
-        self,
-        symbol,
-        action,
-        price
-    ):
-
-
-        message = f"""
-
-🚀 TITAN AI TRADE ALERT
-
-
-Symbol:
-{symbol}
-
-
-Action:
-{action}
-
-
-Price:
-{price}
-
-
-System:
-AI Consensus Engine
-
-
-"""
-
-
-        return self.send_message(
-            message
-        )
-
-
-
-    def risk_alert(
-        self,
-        message
-    ):
-
-
-        return self.send_message(
-
-            f"""
-
-⚠️ TITAN AI RISK ALERT
-
-
-{message}
-
-
-"""
-
-        )
-
-
-
-telegram_monitor = TelegramMonitor()
+    app.run_polling()
