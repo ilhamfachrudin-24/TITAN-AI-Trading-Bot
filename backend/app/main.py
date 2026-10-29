@@ -26,7 +26,9 @@ from app.api import (
 
     health_routes,
 
-    exchange_routes
+    exchange_routes,
+
+    telegram_routes
 
 )
 
@@ -76,6 +78,8 @@ app.include_router(consensus_routes.router)
 app.include_router(health_routes.router)
 
 app.include_router(exchange_routes.route)
+
+app.include_router(telegram_routes.router)
 
 
 @app.get("/")
