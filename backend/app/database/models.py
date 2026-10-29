@@ -3,7 +3,6 @@ from sqlalchemy import (
     Integer,
     String,
     Float,
-    Boolean,
     DateTime
 )
 
@@ -16,7 +15,10 @@ class Wallet(Base):
 
     __tablename__ = "wallets"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(
+        Integer,
+        primary_key=True
+    )
 
     address = Column(
         String,
@@ -31,6 +33,7 @@ class Wallet(Base):
         DateTime,
         default=datetime.utcnow
     )
+
 
 
 class TradePosition(Base):
@@ -56,12 +59,12 @@ class TradePosition(Base):
     leverage = Column(Float)
 
     status = Column(String)
-    # OPEN / CLOSED
 
     created_at = Column(
         DateTime,
         default=datetime.utcnow
     )
+
 
 
 class AIAnalysis(Base):
@@ -75,18 +78,19 @@ class AIAnalysis(Base):
 
     symbol = Column(String)
 
-    sentiment = Column(String)
+    decision = Column(String)
 
     confidence = Column(Float)
 
     consensus = Column(String)
 
-    reasoning = Column(String)
+    analysis = Column(String)
 
     created_at = Column(
         DateTime,
         default=datetime.utcnow
     )
+
 
 
 class TradeHistory(Base):
@@ -100,10 +104,11 @@ class TradeHistory(Base):
 
     symbol = Column(String)
 
-    result = Column(String)
-    # PROFIT / LOSS
+    side = Column(String)
 
     pnl = Column(Float)
+
+    result = Column(String)
 
     created_at = Column(
         DateTime,
