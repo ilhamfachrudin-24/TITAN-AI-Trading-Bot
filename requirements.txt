@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pydantic
+requests
+web3
+solana
+ccxt
+python-telegram-bot
+pandas
+numpy
