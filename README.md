@@ -117,3 +117,27 @@ TITAN AI provides:
 
 
 ![AI Consensus](./assets/ai-consensus.png)
+
+
+# 📚 API Documentation
+
+
+Backend API:
+http://localhost:8000/docs
+
+Available modules:
+
+
+- Health API
+
+- Trading API
+
+- AI API
+
+- Exchange API
+
+- Wallet API
+
+- Analytics API
+
+- Telegram API
