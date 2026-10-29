@@ -6,6 +6,9 @@ from app.database.postgres import Base, engine
 
 from app.api import (
 
+
+from app.api import websocket_routes
+
     ai_routes,
 
     market_routes,
@@ -59,6 +62,8 @@ app.include_router(security_routes.router)
 app.include_router(intelligence_routes.router)
 
 app.include_router(autotrade_routes.router)
+
+app.include_router(websocket_routes.router)
 
 
 
