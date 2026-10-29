@@ -22,7 +22,9 @@ from app.api import (
 
     evaluation_routes,
 
-    consensus_routes
+    consensus_routes,
+
+    health_routes
 
 )
 
@@ -68,6 +70,8 @@ app.include_router(memory_routes.router)
 app.include_router(evaluation_routes.router)
 
 app.include_router(consensus_routes.router)
+
+app.include_router(health_routes.router)
 
 
 @app.get("/")
