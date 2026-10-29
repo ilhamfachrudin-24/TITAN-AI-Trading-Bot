@@ -18,7 +18,9 @@ from app.api import (
 
     websocket_routes,
 
-    memory_routes
+    memory_routes,
+
+    evaluation_routes
 
 )
 
@@ -60,6 +62,8 @@ app.include_router(autotrade_routes.router)
 app.include_router(websocket_routes.router)
 
 app.include_router(memory_routes.router)
+
+app.include_router(evaluation_routes.router)
 
 
 
