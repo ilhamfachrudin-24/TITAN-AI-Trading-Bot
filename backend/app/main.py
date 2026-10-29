@@ -5,11 +5,19 @@ from app.database.postgres import Base, engine
 
 
 from app.api import (
+
     ai_routes,
+
     market_routes,
+
     wallet_routes,
+
     trade_routes,
-    backtest_routes
+
+    backtest_routes,
+
+    security_routes
+
 )
 
 
@@ -33,37 +41,27 @@ app = FastAPI(
 
 
 app.include_router(
-
     ai_routes.router
-
 )
 
-
 app.include_router(
-
     market_routes.router
-
 )
 
-
 app.include_router(
-
     wallet_routes.router
-
 )
 
-
 app.include_router(
-
     trade_routes.router
-
 )
 
+app.include_router(
+    backtest_routes.router
+)
 
 app.include_router(
-
-    backtest_routes.router
-
+    security_routes.router
 )
 
 
@@ -74,14 +72,13 @@ def home():
 
     return {
 
-
         "system":
-
         "TITAN AI Trading Bot",
 
-
         "status":
+        "online",
 
-        "online"
+        "security":
+        "enabled"
 
     }
