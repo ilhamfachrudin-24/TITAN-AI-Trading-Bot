@@ -3,6 +3,7 @@ import MarketCard from "@/components/MarketCard";
 import PositionCard from "@/components/PositionCard";
 import WalletCard from "@/components/WalletCard";
 import LiveTradingPanel from "@/components/LiveTradingPanel";
+import MarketStream from "@/components/MarketStream";
 
 
 
