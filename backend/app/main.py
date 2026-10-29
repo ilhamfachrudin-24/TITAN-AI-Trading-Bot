@@ -20,7 +20,9 @@ from app.api import (
 
     memory_routes,
 
-    evaluation_routes
+    evaluation_routes,
+
+    consensus_routes
 
 )
 
@@ -65,6 +67,7 @@ app.include_router(memory_routes.router)
 
 app.include_router(evaluation_routes.router)
 
+app.include_router(consensus_routes.router)
 
 
 @app.get("/")
