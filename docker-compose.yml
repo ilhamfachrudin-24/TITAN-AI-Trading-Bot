@@ -8,20 +8,18 @@ services:
 
     image: postgres:16
 
-
     container_name: titan-postgres
-
 
     restart: always
 
 
     environment:
 
-      POSTGRES_USER: postgres
+      POSTGRES_USER: titan
 
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: titan_password
 
-      POSTGRES_DB: titan
+      POSTGRES_DB: titan_ai
 
 
     ports:
@@ -35,16 +33,14 @@ services:
 
 
 
+
+
   backend:
 
 
     build:
 
-      context: .
-
-
-      dockerfile: Dockerfile
-
+      context: ./backend
 
 
     container_name: titan-backend
@@ -58,19 +54,44 @@ services:
       - postgres
 
 
-
     environment:
 
 
       DATABASE_URL:
 
-        postgresql://postgres:postgres@postgres:5432/titan
-
+        postgresql://titan:titan_password@postgres:5432/titan_ai
 
 
     ports:
 
       - "8000:8000"
+
+
+
+
+
+  dashboard:
+
+
+    build:
+
+      context: ./dashboard
+
+
+    container_name: titan-dashboard
+
+
+    restart: always
+
+
+    depends_on:
+
+      - backend
+
+
+    ports:
+
+      - "3000:3000"
 
 
 
