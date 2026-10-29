@@ -1,22 +1,32 @@
-⚡ TITAN AI Trading Bot
+# ⚡ TITAN AI Trading Bot
 
-🤖 Overview
+<p align="center">
 
-TITAN AI Trading Bot is an AI-powered cryptocurrency trading infrastructure that combines Artificial Intelligence, Blockchain Intelligence, and Automated Trading Technology.
+<img src="https://img.shields.io/github/stars/ilhamfachrudin-24/TITAN-AI-Trading-Bot?style=for-the-badge">
 
-The platform integrates:
+<img src="https://img.shields.io/github/forks/ilhamfachrudin-24/TITAN-AI-Trading-Bot?style=for-the-badge">
 
-* Multi AI Analysis
-* Market Intelligence
-* Smart Money Tracking
-* Risk Management
-* Automated Trading Framework
-* Real-time Dashboard
-* Backtesting Engine
+<img src="https://img.shields.io/github/license/ilhamfachrudin-24/TITAN-AI-Trading-Bot?style=for-the-badge">
 
-TITAN AI is designed as a modular trading analysis and automation platform that helps traders make better decisions using market data, AI consensus analysis, and structured risk management.
+<img src="https://img.shields.io/github/last-commit/ilhamfachrudin-24/TITAN-AI-Trading-Bot?style=for-the-badge">
 
-The system focuses on intelligent market evaluation, risk-controlled execution, and continuous performance analysis.
+</p>
+
+
+<p align="center">
+
+<b>
+AI-Powered Cryptocurrency Trading Infrastructure
+</b>
+
+</p>
+
+
+<p align="center">
+
+Artificial Intelligence • Blockchain Intelligence • Automated Trading • Web3 Analytics
+
+</p>
 
 ⸻
 
@@ -220,3 +230,55 @@ Stored information:
 This information can be used for future optimization and system evaluation.
 
 ⸻
+
+# 🎥 Demo Preview
+
+
+## Dashboard Preview
+
+
+Coming soon:
+
+
+- AI Trading Dashboard
+- Market Intelligence Panel
+- Smart Money Scanner
+- Portfolio Analytics
+
+
+
+## System Preview
+
+
+TITAN AI provides:
+
+
+- Real-time AI analysis
+
+- Trading monitoring
+
+- Risk evaluation
+
+- Performance tracking
+
+# 🖥️ Screenshots
+
+
+## AI Dashboard
+
+
+![Dashboard Preview](./assets/dashboard.png)
+
+
+
+## Trading Terminal
+
+
+![Trading Terminal](./assets/trading.png)
+
+
+
+## AI Consensus
+
+
+![AI Consensus](./assets/ai-consensus.png)
