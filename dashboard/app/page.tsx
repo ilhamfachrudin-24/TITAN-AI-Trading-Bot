@@ -64,6 +64,18 @@ mt-8
 <PositionCard />
 
 
+<PerformanceCard />
+
+
+<WinRateChart />
+
+  
+<ProfitChart />
+
+
+<AIAccuracy />
+
+
 </div>
 
 
