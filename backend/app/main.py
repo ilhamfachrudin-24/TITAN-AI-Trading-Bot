@@ -16,7 +16,9 @@ from app.api import (
 
     backtest_routes,
 
-    security_routes
+    security_routes,
+
+    intelligence_routes
 
 )
 
@@ -40,29 +42,19 @@ app = FastAPI(
 
 
 
-app.include_router(
-    ai_routes.router
-)
+app.include_router(ai_routes.router)
 
-app.include_router(
-    market_routes.router
-)
+app.include_router(market_routes.router)
 
-app.include_router(
-    wallet_routes.router
-)
+app.include_router(wallet_routes.router)
 
-app.include_router(
-    trade_routes.router
-)
+app.include_router(trade_routes.router)
 
-app.include_router(
-    backtest_routes.router
-)
+app.include_router(backtest_routes.router)
 
-app.include_router(
-    security_routes.router
-)
+app.include_router(security_routes.router)
+
+app.include_router(intelligence_routes.router)
 
 
 
@@ -78,7 +70,7 @@ def home():
         "status":
         "online",
 
-        "security":
-        "enabled"
+        "modules":
+        "AI + Trading + Intelligence"
 
     }
