@@ -18,7 +18,9 @@ from app.api import (
 
     security_routes,
 
-    intelligence_routes
+    intelligence_routes,
+
+    autotrade_routes
 
 )
 
@@ -56,6 +58,8 @@ app.include_router(security_routes.router)
 
 app.include_router(intelligence_routes.router)
 
+app.include_router(autotrade_routes.router)
+
 
 
 @app.get("/")
@@ -70,7 +74,7 @@ def home():
         "status":
         "online",
 
-        "modules":
-        "AI + Trading + Intelligence"
+        "mode":
+        "AI Automated Trading Framework"
 
     }
