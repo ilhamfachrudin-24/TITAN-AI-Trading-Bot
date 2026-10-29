@@ -1,42 +1,87 @@
 from fastapi import FastAPI
 
+
 from app.database.postgres import Base, engine
-from app.database import models
+
+
+from app.api import (
+    ai_routes,
+    market_routes,
+    wallet_routes,
+    trade_routes,
+    backtest_routes
+)
+
 
 
 Base.metadata.create_all(
+
     bind=engine
+
 )
+
 
 
 app = FastAPI(
+
     title="TITAN AI Trading Bot",
-    description="Autonomous AI Crypto Trading Intelligence System",
-    version="0.1.0"
+
+    version="1.0.0"
+
 )
 
 
+
+app.include_router(
+
+    ai_routes.router
+
+)
+
+
+app.include_router(
+
+    market_routes.router
+
+)
+
+
+app.include_router(
+
+    wallet_routes.router
+
+)
+
+
+app.include_router(
+
+    trade_routes.router
+
+)
+
+
+app.include_router(
+
+    backtest_routes.router
+
+)
+
+
+
 @app.get("/")
+
 def home():
 
     return {
-        "status": "online",
-        "system": "TITAN AI Trading Bot",
-        "database": "connected"
-    }
 
 
-@app.get("/health")
-def health():
+        "system":
 
-    return {
+        "TITAN AI Trading Bot",
 
-        "backend": "online",
 
-        "database": "ready",
+        "status":
 
-        "ai_router": "waiting",
-
-        "trading_engine": "waiting"
+        "online"
 
     }
