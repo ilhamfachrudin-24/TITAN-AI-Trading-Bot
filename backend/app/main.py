@@ -1,13 +1,26 @@
-from fastapi import FastAPI
-
-
-from app.database.postgres import Base, engine
-
-
 from app.api import (
 
+    ai_routes,
 
-from app.api import websocket_routes
+    market_routes,
+
+    wallet_routes,
+
+    trade_routes,
+
+    backtest_routes,
+
+    security_routes,
+
+    intelligence_routes,
+
+    autotrade_routes,
+
+    websocket_routes,
+
+    memory_routes
+
+)
 
     ai_routes,
 
@@ -64,6 +77,8 @@ app.include_router(intelligence_routes.router)
 app.include_router(autotrade_routes.router)
 
 app.include_router(websocket_routes.router)
+
+app.include_router(memory_routes.router)
 
 
 
